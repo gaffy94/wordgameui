@@ -1,0 +1,80 @@
+<nb-layout>
+    <nb-layout-column>
+      <nb-card>
+        <nb-card-body>
+        
+          <div class="row h-100 mb-4">
+            <div class="col-md-12">
+                <h4>Level {{user.level}}</h4>
+              </div> 
+            <div class="col-md-6 offset-md-3 ma">
+              <h1>{{curLevelWord}}</h1>
+              <span class="caption">{{description}}</span>
+            </div>
+            <div class="col-md-6 offset-md-3 ma">
+             <div class="col-md-12">
+                <countdown #cd [config]="notifyConfig" (event)="handleEvent($event)" class="custom-style"></countdown>
+             </div>
+                <form>
+                  <div class="form-group">
+                    <!-- <label for="exampleInputEmail1" class="label">Email</label> -->
+                    <input type="text" nbInput fullWidth id="exampleInputEmail1" placeholder="Word" name="word"
+                      [(ngModel)]="word" status="basic">
+                  </div>
+                  <button size="large" fullWidth nbButton shape="rectangle" status="primary" type="submit"
+                    (click)="submitWord()">
+                    <nb-icon icon="plus-outline" [options]="{ animation: { type: 'shake' } }"></nb-icon>Add Word
+                  </button>
+                </form>
+              </div>
+          </div>
+
+
+          <nb-list>
+            <nb-list-item *ngFor="let item of mywords">
+                <div class="container"> 
+
+                    <div class="row">
+               <div class="row col-md-8">
+                 <div class="col-md-12 mb-3">
+                   {{item.word}}
+                 </div>
+                 <div class="col-md-12 text-left">
+                
+                   <span class="caption">{{item.dateCreated | date:'medium'}}</span>
+                 </div>
+               </div>
+
+               <div class="col-md-4 text-right">
+                 <nb-icon icon="pie-chart-outline" pack="eva" status="danger"
+                   [options]="{ animation: { type: 'shake' } }"></nb-icon> &nbsp;
+                   <span class="caption">{{item.wordScore}}</span>
+               </div>
+             </div>
+               </div>
+            </nb-list-item>
+            <nb-list-item>
+                <div class="container"> 
+
+                    <div class="row">
+               <div class="row col-md-8">
+                 <div class="col-md-12 mb-3">
+                   Level Score
+                 </div>
+               </div>
+
+               <div class="col-md-4 text-right">
+                 <nb-icon icon="flag" pack="eva" status="danger"
+                   [options]="{ animation: { type: 'shake' } }"></nb-icon> &nbsp;
+                   <span class="caption">{{levelScore}}</span>
+               </div>
+             </div>
+               </div>
+            </nb-list-item>
+          </nb-list>
+        </nb-card-body>
+      </nb-card>
+    </nb-layout-column>
+  </nb-layout>
+  <ngx-spinner name="sp2"></ngx-spinner>
+  

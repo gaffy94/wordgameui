@@ -1,0 +1,70 @@
+<nb-layout>
+    <nb-layout-column>
+      <nb-card>
+        <nb-card-body>
+            <div class="col-md-12 text-right">
+                <nb-icon icon="flag" pack="eva" status="danger"
+                       [options]="{ animation: { type: 'shake' } }"></nb-icon> &nbsp;
+                       <h6 >Total Score: {{user.totalScore}}</h6>
+            </div>
+          <div class="row h-100 mb-4" *ngFor="let level of gameLevels">
+            <div class="col-md-12">
+                <h4>Level {{level.level}}</h4>
+              </div> 
+            <div class="col-md-6 offset-md-3 ma">
+              <h1>{{level.word}}</h1>
+              <span class="caption">{{level.description}}</span>
+            </div>
+            <nb-list>
+                <nb-list-item *ngFor="let item of level.data">
+                    <div class="container"> 
+    
+                        <div class="row">
+                   <div class="row col-md-8">
+                     <div class="col-md-12 mb-3">
+                       {{item.word}}
+                     </div>
+                     <div class="col-md-12 text-left">
+                    
+                       <span class="caption">{{item.dateCreated | date:'medium'}}</span>
+                     </div>
+                   </div>
+    
+                   <div class="col-md-4 text-right">
+                     <nb-icon icon="pie-chart-outline" pack="eva" status="danger"
+                       [options]="{ animation: { type: 'shake' } }"></nb-icon> &nbsp;
+                       <span class="caption">{{item.wordScore}}</span>
+                   </div>
+                 </div>
+                   </div>
+                </nb-list-item>
+                <nb-list-item>
+                    <div class="container"> 
+    
+                        <div class="row">
+                   <div class="row col-md-8">
+                     <div class="col-md-12 mb-3">
+                       Level Score
+                     </div>
+                   </div>
+    
+                   <div class="col-md-4 text-right">
+                     <nb-icon icon="flag" pack="eva" status="danger"
+                       [options]="{ animation: { type: 'shake' } }"></nb-icon> &nbsp;
+                       <span class="caption">{{level.levelScore}}</span>
+                   </div>
+                 </div>
+                   </div>
+                </nb-list-item>
+              </nb-list>
+
+          </div>
+
+
+        
+        </nb-card-body>
+      </nb-card>
+    </nb-layout-column>
+  </nb-layout>
+  <ngx-spinner name="sp2"></ngx-spinner>
+  

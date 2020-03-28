@@ -1,0 +1,87 @@
+
+  .ma {
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    word-break: break-all;
+    text-align: center;
+
+  }
+  
+  nb-icon {
+    cursor: pointer;
+}
+
+nb-icon.nonote {
+font-size: 4rem;
+} 
+
+nb-icon.norm {
+font-size: 2rem;
+margin: 20px;
+}
+
+@import '../../../themes.scss';
+
+@include nb-install-component() {
+div.nocontent {
+flex-direction: row;
+align-items: center;
+height: 6rem;
+overflow: visible;
+
+.icon-container {
+  height: 100%;
+  padding: 0.625rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.75rem;
+  height: 4.75rem;
+  font-size: 3.75rem;
+  border-radius: nb-theme(card-border-radius);
+  transition: width 0.4s ease;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  color: nb-theme(text-control-color);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  @include nb-ltr(padding, 0 0.5rem 0 0.75rem);
+  @include nb-rtl(padding, 0 0.75rem 0 0.5rem);
+  border-left: 1px solid transparent;
+}
+
+.title {
+  margin: 0;
+}
+
+.status {
+  text-transform: uppercase;
+}
+}
+}
+
+.custom-style {
+    font-size: 18px;
+    .item {
+      padding-left: 4px;
+      &:nth-child(1) {
+        color: rgb(199, 66, 0);
+      }
+      &:nth-child(2) {
+        color: rgb(45, 0, 170);
+      }
+      &:nth-child(3) {
+        color: rgb(207, 7, 147);
+      }
+    }
+  }
