@@ -2,12 +2,12 @@ export const link = {
     // baseaddress: 'https://pacific-eyrie-42411.herokuapp.com/api',
     // login: 'https://pacific-eyrie-42411.herokuapp.com/login',
     // logout: 'https://pacific-eyrie-42411.herokuapp.com/logout',
-    baseaddress: 'http://localhost:9090/api',
-    login: 'http://localhost:9090/login',
-    logout: 'http://localhost:9090/logout'
-    // baseaddress: 'https://anagrambk.eu-de.mybluemix.net/api',
-    // login: 'https://anagrambk.eu-de.mybluemix.net/login',
-    // logout: 'https://anagrambk.eu-de.mybluemix.net/logout',
+    // baseaddress: 'http://localhost:9090/api',
+    // login: 'http://localhost:9090/login',
+    // logout: 'http://localhost:9090/logout'
+    baseaddress: 'https://anagrambk.eu-de.mybluemix.net/api',
+    login: 'https://anagrambk.eu-de.mybluemix.net/login',
+    logout: 'https://anagrambk.eu-de.mybluemix.net/logout',
   };
 
   export const isGameTime = {

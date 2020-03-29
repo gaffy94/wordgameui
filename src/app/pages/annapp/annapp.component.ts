@@ -95,6 +95,7 @@ export class AnnappComponent implements OnInit {
  
   }
   async submitWord() {
+    this.countdown.pause();
     const link = validateWord.apiUrl;
     let resp = await this.restClient.funcGet(link.replace("{word}", this.word), this.spinner, 'sp2');
 
@@ -107,6 +108,7 @@ export class AnnappComponent implements OnInit {
     await this.fetchMyLevelWords();
     this.spinnerX.stopSpinner('sp2', this.spinner);
     this.word = undefined;
+    this.countdown.begin();
 
   }
 
